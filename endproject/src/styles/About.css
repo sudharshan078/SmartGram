@@ -1,0 +1,53 @@
+.about-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #fefefe;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-line {
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.about-line h2 {
+  font-size: 1.6rem;
+  margin-bottom: 5px;
+  color: #2b6777;
+}
+
+.about-line h4 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #52ab98;
+}
+
+.about-line p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.blink::after {
+  content: '|';
+  animation: blink 1s step-start infinite;
+  margin-left: 3px;
+  color: #52ab98;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,85 @@
+.upload-container {
+    max-width: 500px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .upload-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .upload-form-group {
+    margin-bottom: 15px;
+  }
+  
+  .upload-label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #444;
+  }
+  
+  .upload-input,
+  .upload-textarea,
+  .upload-file {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: border-color 0.2s;
+  }
+  
+  .upload-input:focus,
+  .upload-textarea:focus,
+  .upload-file:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .upload-textarea {
+    resize: vertical;
+  }
+  
+  .upload-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .upload-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .upload-message {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 6px;
+  }
+  
+  .upload-message.success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+  }
+  
+  .upload-message.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+  }
+  

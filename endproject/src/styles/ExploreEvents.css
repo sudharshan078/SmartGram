@@ -1,0 +1,218 @@
+/* Container for the entire component */
+.display-images-container {
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Title styling */
+.display-images-container h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+/* Image gallery grid */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin-bottom: 80px; /* prevents overlap with fixed button */
+}
+
+/* Individual image card */
+.image-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.image-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+}
+
+.image-card p {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #555;
+  user-select: none;
+}
+
+/* Event images */
+.image {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  height: 140px;
+}
+
+/* Popup container to cover entire screen */
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInBackground 0.3s ease forwards;
+  z-index: 1000;
+}
+
+/* Popup content styling */
+.popup-content {
+  background: #fff;
+  width: 90%;
+  max-width: 440px;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgb(0 0 0 / 0.2);
+  padding: 24px 28px 28px 28px;
+  position: relative;
+  animation: slideDownFadeIn 0.4s ease forwards;
+  font-size: 1rem;
+  color: #333;
+  box-sizing: border-box;
+}
+
+/* Popup header container for flexible layout */
+.popup-content h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 20px 0; /* Increased margin for gap */
+  user-select: none;
+}
+
+/* Close button in top-right corner */
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  color: #888;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-weight: 600;
+  user-select: none;
+}
+
+.close-btn:hover {
+  color: #e63946;
+}
+
+/* Each event detail paragraph */
+.popup-content p {
+  margin: 10px 0;
+  line-height: 1.4;
+}
+
+/* Register button inside popup */
+.register-button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgb(245 87 108 / 0.5);
+  transition: background 0.35s ease;
+  user-select: none;
+}
+
+.register-button:hover {
+  background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+}
+
+/* Fixed Post Event button with styling, width 300px */
+.post-event-button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  padding: 12px 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgb(0 242 254 / 0.6);
+  transition: box-shadow 0.3s ease, background 0.35s ease;
+  user-select: none;
+  z-index: 1100;
+}
+
+.post-event-button:hover {
+  background: linear-gradient(45deg, #00f2fe 0%, #4facfe 100%);
+  box-shadow: 0 10px 25px rgb(79 172 254 / 0.8);
+}
+
+/* Animations */
+@keyframes fadeInBackground {
+  from {
+    background-color: rgba(0,0,0,0);
+  }
+  to {
+    background-color: rgba(0,0,0,0.6);
+  }
+}
+
+@keyframes slideDownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive for smaller mobile devices */
+@media (max-width: 400px) {
+  .image-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .image-card {
+    padding: 8px;
+  }
+
+  .image {
+    height: 120px;
+  }
+
+  .popup-content {
+    width: 95%;
+    padding: 20px 22px 24px 22px;
+    font-size: 0.95rem;
+  }
+  
+  .post-event-button {
+    width: 90px;
+    font-size: 0.95rem;
+    padding: 10px 0;
+  }
+}
+

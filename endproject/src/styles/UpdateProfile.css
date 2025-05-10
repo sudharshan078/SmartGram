@@ -1,0 +1,87 @@
+/* Background & container */
+.update-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #f0f8ff, #e6ffe6);
+    height: 100vh;
+    animation: fadeIn 1.2s ease-in;
+  }
+  
+  .update-form {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    width: 400px;
+    animation: slideUp 0.8s ease-in-out;
+  }
+  
+  /* Headings */
+  .form-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Inputs */
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: border 0.3s;
+  }
+  
+  .input-field:focus {
+    border-color: #3399ff;
+    outline: none;
+  }
+  
+  .readonly {
+    background-color: #f5f5f5;
+    color: #666;
+  }
+  
+  /* Button */
+  .submit-btn {
+    background-color: #3399ff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .submit-btn:hover {
+    background-color: #007acc;
+    transform: scale(1.03);
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  

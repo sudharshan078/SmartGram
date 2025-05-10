@@ -1,0 +1,350 @@
+/* Container */
+.display-images-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f2f5;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Image Gallery */
+.image-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  padding-right: 10px;
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+.image-gallery::-webkit-scrollbar {
+  width: 6px;
+}
+
+.image-gallery::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+/* Image Card */
+.image-card {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 350px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.image-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Image */
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
+
+.image:hover {
+  transform: scale(1.05);
+}
+
+/* Title and Description */
+.image-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.image-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Interaction Buttons */
+.interaction-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.like-button,
+.comment-button {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  color: #777;
+}
+
+.like-button.liked {
+  color: #e91e63;
+}
+
+.comment-button:hover {
+  color: #4caf50;
+}
+
+/* Fixed Post Button */
+.post-button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  z-index: 100;
+}
+
+.post-button:hover {
+  background-color: #45a049;
+}
+
+/* Chat Panel */
+.chat-panel {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: -3px 0 15px rgba(0, 0, 0, 0.15);
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  animation: slideInRight 0.4s ease forwards;
+  z-index: 200;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.close-chat-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+}
+
+.close-chat-button:hover {
+  color: #f44336;
+}
+
+.chat-panel h4 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.comments-list {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 8px;
+  margin-bottom: 10px;
+}
+
+.comment-item {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+/* Comment Input */
+.comment-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.comment-input:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+
+/* Post Comment Button */
+.post-comment-button {
+  background-color: #5a7b5b;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-size: 1rem;
+  border-radius: 6px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.post-comment-button:hover {
+  background-color: #464f46;
+}
+/* Modified Chat Panel */
+.chat-panel {
+  position: fixed;
+  top: 70px; /* Assumes navbar height is 60px + 10px spacing */
+  right: 20px;
+  width: 320px;
+  max-height: 450px;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  animation: slideInPopUp 0.4s ease forwards;
+  z-index: 200;
+  overflow: hidden;
+}
+
+/* Animation for smooth pop-up */
+@keyframes slideInPopUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.close-chat-button {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 1.6rem;
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+}
+
+.chat-panel h4 {
+  font-size: 1.2rem;
+  margin: 30px 0 15px;
+  text-align: center;
+  color: #333;
+}
+
+/* Scrollable comment section */
+.comments-list {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  padding-right: 6px;
+}
+
+.comment-item {
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  color: #444;
+  word-break: break-word;
+}
+
+.comment-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.comment-input:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+
+.post-comment-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.post-comment-button:hover {
+  background-color: #45a049;
+}
+/* Centered Post Button */
+.post-button {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  width: 150px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  background-color: #2c2e85;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10%;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+}
+
+.post-button:hover {
+  background-color: #45a049;
+}
